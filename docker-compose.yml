@@ -1,0 +1,6 @@
+rancher-os-cron:
+  build: .
+  volumes:
+    - ${SOURCE_DIR}:/opt/run_scripts
+  entrypoint:
+    - /artifacts/run_metric_scripts.sh

@@ -1,0 +1,14 @@
+rancher-cron-os:
+  image: demandbase/rancher-cron-os:${DOCKER_TAG}
+  labels:
+    io.rancher.stack.name: "demandbase/rancher-cron-os:${DOCKER_TAG}"
+    io.rancher.container.hostname_override: "rancher-cron-os-${DOCKER_TAG}"
+  stdin_open: true
+  tty: true
+  environment:
+    - DOCKER_TAG=${DOCKER_TAG}
+    - SOURCE_DIR=${SOURCE_DIR}
+  volumes:
+    - /opt/test:/opt/run_scripts
+  entrypoint:
+    - /artifacts/run_metric_scripts.sh

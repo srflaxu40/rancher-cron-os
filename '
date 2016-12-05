@@ -1,8 +1,0 @@
-FROM ubuntu:latest
-MAINTAINER knepperjm@gmail.com
-
-COPY cronfile /etc/cron.d/run_get_metrics_every_minute
-
-RUN mkdir -p /opt/cloudwatchmonitoring && \
-    chmod 755 /opt/cloudwatchmonitoring
-
